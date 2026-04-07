@@ -9,10 +9,12 @@ def check_num(range_num):
         num = int(num)
     except ValueError:
         #숫자 변환 실패, ex) 23a
+        print()
         print("!!!숫자가 아닙니다!!!")
         return 0
     except TypeError:
         #숫자 변환 실패 ex) sdfs
+        print()
         print("!!!숫자가 아닙니다!!!")
         return 0
     except KeyboardInterrupt:
