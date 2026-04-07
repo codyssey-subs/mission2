@@ -1,3 +1,5 @@
+from utils import check_num
+
 def print_menu():
     print("========================================")
     print("        🎯 나만의 퀴즈 게임 🎯")
@@ -8,28 +10,29 @@ def print_menu():
     print("4. 점수 확인")
     print("5. 종료")
     print("========================================")
-    return input("선택 : ")
+    return input("선택 : ") #string type
 
 def start_quiz():
     while True:
-        menu = int(print_menu())
+        menu_num = print_menu()
+        menu_num = check_num(menu_num, 5)
 
-        if menu == 1:
+        if menu_num == 1:
             #quiz_play()
             print("quiz_play()")
-        elif menu == 2:
+        elif menu_num == 2:
             print("quiz_add()")
             #quiz_add()
-        elif menu == 3:
+        elif menu_num == 3:
             print("quiz_list()")
             #quiz_list()
-        elif menu == 4:
+        elif menu_num == 4:
             print("check_score()")
             #check_score()
-        elif menu == 5:
+        elif menu_num == 5:
             print("exit")
             break
-        else:
+        else: #허용 범위 밖 숫자
             print()
             print("!!!1 ~ 5 사이의 숫자를 입력해주세요!!!!")
             print()
