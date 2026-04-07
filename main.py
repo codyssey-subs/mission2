@@ -10,12 +10,11 @@ def print_menu():
     print("4. 점수 확인")
     print("5. 종료")
     print("========================================")
-    return input("선택 : ") #string type
 
 def start_quiz():
     while True:
-        menu_num = print_menu()
-        menu_num = check_num(menu_num, 5)
+        print_menu()
+        menu_num = check_num(5)
 
         if menu_num == 1:
             #quiz_play()
@@ -33,7 +32,6 @@ def start_quiz():
             print("exit")
             break
         else: #허용 범위 밖 숫자
-            print()
             print("!!!1 ~ 5 사이의 숫자를 입력해주세요!!!!")
             print()
 
