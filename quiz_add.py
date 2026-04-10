@@ -10,6 +10,8 @@ def quiz_add(quizGame):
     while answer == 0:
         num = input("정답: ")
         answer = check_num(num, 4)
+    quiz_dict = {"question":question, "choices":choices, "answer":answer}
+    quizGame.quizzes.append(quiz_dict)
 
 def quiz_add_basic():
     quizGame.quizzes.append(
