@@ -1,5 +1,7 @@
 from utils import check_num
 from quiz_add import *
+from class_quiz import Quiz
+from class_quizgame import QuizGame
 
 def print_menu():
     print("========================================")
@@ -38,6 +40,7 @@ def start_quiz():
             print()
 
 def main():
+    quizGame = QuizGame()
     quiz_add_basic()
     start_quiz()
 
