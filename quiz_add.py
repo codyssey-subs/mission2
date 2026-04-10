@@ -36,3 +36,18 @@ def quiz_add_basic():
         "해물비빔밥",
         3
     )
+
+def quiz_add(quizGame):
+    question = input("문제: ")
+    choices = []
+    for i in range(4):
+        choice = input("선택지: ")
+        choices.append(choice)
+    num = input("정답: ")
+    answer = check_num(num, 4)
+    while answer == 0:
+        num = input("정답: ")
+        answer = check_num(num, 4)
+    quiz_dict = {"question":question, "choices":choices, "answer":answer}
+    quizGame.quizzes.append(quiz_dict)
+    

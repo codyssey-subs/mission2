@@ -18,7 +18,8 @@ def start_quiz():
     while True:
         print_menu()
         range_num = 5
-        menu_num = check_num(range_num)
+        num = input("선택 : ")
+        menu_num = check_num(num, range_num)
 
         if menu_num == 1:
             #quiz_play()
@@ -35,12 +36,13 @@ def start_quiz():
         elif menu_num == 5:
             print("exit")
             break
-        else: #허용 범위 밖 숫자
-            print("!!!1 ~", range_num, "사이의 숫자를 입력해주세요!!!!")
-            print()
+        # else: #허용 범위 밖 숫자
+        #     print("!!!1 ~", range_num, "사이의 숫자를 입력해주세요!!!!")
+        #     print()
 
 def main():
     quizGame = QuizGame()
+
     quiz_add_basic()
     start_quiz()
 

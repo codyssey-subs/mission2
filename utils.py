@@ -1,8 +1,7 @@
 
 
-def check_num(range_num):
+def check_num(num, range_num):
     try:
-        num = input("선택 : ")
         num.lstrip() #왼쪽 공백 제거
         num.rstrip() #오른쪽 공백 제거
 
@@ -20,8 +19,10 @@ def check_num(range_num):
     except KeyboardInterrupt:
         #Ctrl + C
         print("!!!Ctrl + C로 종료되지 않습니다!!!")
+        return 0
     else:
         #허용 범위 밖 숫자
         if 0 >= num or num > range_num:
+            print("!!!1 ~", range_num, "사이의 숫자를 입력해주세요!!!!")
             return 0
         return num
