@@ -1,5 +1,16 @@
 from class_quiz import *
 
+def quiz_add(quizGame):
+    question = input("문제: ")
+    choices = []
+    for i in range(4):
+        choices.append(input("선택지: "))
+    num = input("정답: ")
+    answer = check_num(num, 4)
+    while answer == 0:
+        num = input("정답: ")
+        answer = check_num(num, 4)
+
 def quiz_add_basic():
     quizGame.quizzes.append(
         Quiz("세상에서 가장 바쁜 떡은?",
