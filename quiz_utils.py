@@ -1,3 +1,5 @@
+#quiz_utils.py
+
 from utils import *
 
 def quiz_play(quizGame):
@@ -25,5 +27,11 @@ def quiz_list(quizGame):
         print("!!!퀴즈가 없습니다. 퀴즈를 추가해주세요!!!")
         return
     #퀴즈가 있는 경우
+    print()
     for q in quizGame.quizzes:
-        print(q)
+        print("Q : " + q["question"])
+        for i in range(4):
+            print('[' + str(i + 1) + ']' + q["choices"][i])
+        print("A : [" + str(q["answer"]) + ']')
+        print()
+        
