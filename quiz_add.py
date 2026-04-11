@@ -13,7 +13,7 @@ def quiz_add(quizGame):
     quiz_dict = {"question":question, "choices":choices, "answer":answer}
     quizGame.quizzes.append(quiz_dict)
 
-def quiz_add_basic():
+def quiz_add_basic(quizGame):
     quizGame.quizzes.append(
         Quiz("세상에서 가장 바쁜 떡은?",
             "가래떡", 

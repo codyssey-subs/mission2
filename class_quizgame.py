@@ -1,11 +1,10 @@
 class QuizGame:
     def __init__(self):
         self.quizzes = []
-        self.highest
+        self.highest = 0
         self.cnt = 0
     #
     #메뉴표시
-    def
     #
     #퀴즈 풀기
     #
@@ -15,4 +14,4 @@ class QuizGame:
     #
     #점수 확인
     #
-    #팡리 저장/불러오기
+    #파일 저장/불러오기

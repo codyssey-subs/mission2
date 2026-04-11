@@ -1,5 +1,3 @@
-
-
 def check_num(num, range_num):
     try:
         num.lstrip() #왼쪽 공백 제거
