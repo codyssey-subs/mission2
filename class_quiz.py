@@ -21,3 +21,9 @@ class Quiz:
         print()
     def check_answer(self, answer:int):
         return answer == self.answer
+    def to_dict(self):
+        return {
+            "question": self.question,
+            "choices": self.choices,
+            "answer": self.answer
+        }

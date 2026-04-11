@@ -14,6 +14,7 @@ def quiz_add(quizGame):
         answer = check_num("정답: ", 4)
     quizGame.quizzes.append(Quiz(question, choices[0], choices[1], choices[2], choices[3], answer))
     print("\n✅ 퀴즈가 추가되었습니다!\n")
+    quizGame.save_data()
 
 def quiz_add_basic(quizGame):
     quizGame.quizzes.append(
