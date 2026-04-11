@@ -1,3 +1,5 @@
+#main.py
+
 from utils import check_num
 from quiz_add import *
 from class_quiz import Quiz

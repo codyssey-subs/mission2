@@ -1,3 +1,5 @@
+#class_quiz.py
+
 class Quiz:
     def __init__(self, question, choice0, choice1, choice2, choice3, answer:int):
         self.question = question
