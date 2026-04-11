@@ -3,7 +3,7 @@
 class QuizGame:
     def __init__(self):
         self.quizzes = []
-        self.highest = 0
+        self.best_score = 0
         self.cnt = 0
     #
     #메뉴표시
