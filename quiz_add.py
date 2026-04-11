@@ -9,7 +9,7 @@ def quiz_add(quizGame):
     question = input("문제: ")
     choices = []
     for i in range(4):
-        choices.append(input("선택지: " + str(i)))
+        choices.append(input("선택지" + str(i) + ": "))
     answer = check_num("정답: ", 4)
     while answer == 0:
         answer = check_num("정답: ", 4)
