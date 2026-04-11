@@ -1,8 +1,8 @@
-def check_num(num, range_num):
+def check_num(msg, range_num):
     try:
+        num = input(msg)
         num.lstrip() #왼쪽 공백 제거
         num.rstrip() #오른쪽 공백 제거
-
         num = int(num)
     except ValueError:
         #숫자 변환 실패, ex) 23a

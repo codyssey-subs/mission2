@@ -18,14 +18,12 @@ def print_menu():
 def start_quiz(quizGame):
     while True:
         print_menu()
-        num = input("선택 : ")
-        menu_num = check_num(num, 5)
+        menu_num = check_num("선택: ", 5)
 
         if menu_num == 1:
             quiz_play(quizGame)
         elif menu_num == 2:
-            print("quiz_add()")
-            #quiz_add()
+            quiz_add(quizGame)
         elif menu_num == 3:
             quiz_list(quizGame)
         elif menu_num == 4:

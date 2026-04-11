@@ -1,3 +1,5 @@
+from utils import *
+
 def quiz_play(quizGame):
     #퀴즈가 없는 경우
     if len(quizGame.quizzes) == 0:
@@ -9,7 +11,7 @@ def quiz_play(quizGame):
         print(q["question"])
         for choice in q["choices"]:
             print(choice)
-        answer = int(input("정답: ")) #정답 입력
+        answer = check_num("정답: ", 4) #정답 입력
         if answer == q["answer"]: #정답/오답 여부
             print("!!!정답입니다!!!")
             score += 1

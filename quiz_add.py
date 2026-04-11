@@ -1,17 +1,19 @@
 from class_quiz import *
+from utils import *
 
 def quiz_add(quizGame):
     question = input("문제: ")
     choices = []
     for i in range(4):
         choices.append(input("선택지: "))
-    num = input("정답: ")
-    answer = check_num(num, 4)
+    answer = check_num("정답: ", 4)
     while answer == 0:
-        num = input("정답: ")
-        answer = check_num(num, 4)
+        answer = check_num("정답: ", 4)
     quiz_dict = {"question":question, "choices":choices, "answer":answer}
     quizGame.quizzes.append(quiz_dict)
+    print()
+    print("!!!퀴즈가 추가되었습니다!!!")
+    print()
 
 def quiz_add_basic(quizGame):
     quizGame.quizzes.append(
