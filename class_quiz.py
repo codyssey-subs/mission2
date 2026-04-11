@@ -16,8 +16,8 @@ class Quiz:
     def print_quiz(self):
         print("Q : " + self.question)
         for i in range(4):
-            print('[' + str(i + 1) + ']' + self.choices[i])
-        print("A : [" + str(self.answer) + ']')
+            print(f"[{i + 1}] {self.choices[i]}")
+        print(f"A : [{self.answer}]")
         print()
     def check_answer(self, answer:int):
         return answer == self.answer
