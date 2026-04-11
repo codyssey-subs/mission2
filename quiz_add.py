@@ -11,8 +11,7 @@ def quiz_add(quizGame):
     answer = check_num("정답: ", 4)
     while answer == 0:
         answer = check_num("정답: ", 4)
-    quiz_dict = {"question":question, "choices":choices, "answer":answer}
-    quizGame.quizzes.append(quiz_dict)
+    quizGame.quizzes.append(Quiz(question, choices[0], choices[1], choices[2], choices[3], answer))
     print()
     print("!!!퀴즈가 추가되었습니다!!!")
     print()

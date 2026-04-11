@@ -3,7 +3,7 @@
 class Quiz:
     def __init__(self, question, choice0, choice1, choice2, choice3, answer:int):
         self.question = question
-        self.choices = {choice0, choice1, choice2, choice3}
+        self.choices = [choice0, choice1, choice2, choice3]
         self.answer = answer
     #
     def get_question(self):
@@ -14,8 +14,10 @@ class Quiz:
         return self.answer
     #
     def print_quiz(self):
-        print(self.question)
-        for choice in self.choices:
-            print(choice)
+        print("Q : " + self.question)
+        for i in range(4):
+            print('[' + str(i + 1) + ']' + self.choices[i])
+        print("A : [" + str(self.answer) + ']')
+        print()
     def check_answer(self, answer:int):
         return answer == self.answer
