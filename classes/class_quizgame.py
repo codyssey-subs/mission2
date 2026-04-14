@@ -95,11 +95,21 @@ class QuizGame:
         try:
             with open("state.json", "r", encoding="utf-8") as f:
                 state = json.load(f)
-            self.quizzes = [
-                Quiz(q["question"], q["choices"][0], q["choices"][1], q["choices"][2], q["choices"][3], q["answer"])
-                for q in state["quizzes"]
-            ]
-            self.best_score = state["best_score"]
-            print(f"\n📂 저장된 데이터를 불러왔습니다.\n퀴즈 {len(self.quizzes)}개, 최고점수 {self.best_score}점\n")
         except Exception as e:
+            with open("basic.json", "r", encoding="utf-8") as f:
+                state = json.load(f)
+            print("hello")
             handle_file_exception(e)
+
+        self.quizzes = [
+            Quiz(q["question"], 
+                q["choices"][0], 
+                q["choices"][1], 
+                q["choices"][2], 
+                q["choices"][3], 
+                q["answer"]
+            )
+            for q in state["quizzes"]
+        ]
+        self.best_score = state["best_score"]
+        print(f"\n📂 저장된 데이터를 불러왔습니다.\n퀴즈 {len(self.quizzes)}개, 최고점수 {self.best_score}점\n")
