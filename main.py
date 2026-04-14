@@ -1,36 +1,23 @@
 #main.py
 
-from utils import check_num
-from quiz_add import *
-from class_quiz import Quiz
-from class_quizgame import QuizGame
-from quiz_utils import *
+from utils import *
+from classes.class_quiz import Quiz
+from classes.class_quizgame import QuizGame
 
-def print_menu():
-    print("========================================")
-    print("        🎯 나만의 퀴즈 게임 🎯")
-    print("========================================")
-    print("1. 퀴즈 풀기")
-    print("2. 퀴즈 추가")
-    print("3. 퀴즈 목록")
-    print("4. 점수 확인")
-    print("5. 종료")
-    print("========================================")
 
 def start_quiz(quizGame):
     while True:
-        print_menu()
+        quizGame.print_menu()
         menu_num = check_num("선택: ", 5)
 
         if menu_num == 1:
-            quiz_play(quizGame)
+            quizGame.quiz_play()
         elif menu_num == 2:
-            quiz_add(quizGame)
+            quizGame.quiz_add()
         elif menu_num == 3:
-            quiz_list(quizGame)
+            quizGame.quiz_list()
         elif menu_num == 4:
-            print("check_score()")
-            #check_score()
+            quizGame.check_score()
         elif menu_num == 5:
             print("exit")
             break
@@ -39,8 +26,6 @@ def start_quiz(quizGame):
 
 def main():
     quizGame = QuizGame()
-    # if : #파일 오픈 실패시
-    #     quiz_add_basic(quizGame)
     start_quiz(quizGame)
 
 if __name__ == "__main__":

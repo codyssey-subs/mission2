@@ -1,5 +1,18 @@
 #utils.py
 
+import json
+from classes.class_quiz import Quiz
+
+def handle_file_exception(e):
+    if isinstance(e, FileNotFoundError):
+        print("파일이 없어 새로 시작합니다.")
+    elif isinstance(e, json.JSONDecodeError):
+        print("파일 형식이 잘못되었습니다.")
+    elif isinstance(e, PermissionError):
+        print("파일 권한이 없습니다.")
+    else:
+        print(f"파일 오류: {e}")
+
 def check_num(msg, range_num):
     try:
         num = input(msg)
@@ -27,3 +40,50 @@ def check_num(msg, range_num):
             print("⚠️ 잘못된 입력입니다. 1~" + str(range_num), "사이의 숫자를 입력해주세요!")
             return 0
         return num
+    
+def quiz_add_basic(quizGame):
+    quizGame.quizzes.append(
+        Quiz("세상에서 가장 바쁜 떡은?",
+            "가래떡", 
+            "백설기", 
+            "헐레벌떡", 
+            "인절미", 
+            3
+        )
+    )
+    quizGame.quizzes.append(
+        Quiz("세상에서 가장 뜨거운 바다는?", 
+            "동해", 
+            "남해", 
+            "열받아", 
+            "서해",
+            3
+        )
+    )
+    quizGame.quizzes.append(
+        Quiz("프로그래머가 바다에 가면 먼저 찾는 것은?", 
+            "fish", 
+            "C", 
+            "ship", 
+            "sand", 
+            2
+        )
+    )
+    quizGame.quizzes.append(
+        Quiz("세상에서 가장 쉬운 숫자는?", 
+            "0",
+            "1",
+            "2147483647",
+            "190000",
+            4
+        )
+    )
+    quizGame.quizzes.append(
+        Quiz("세상에서 가장 잔인한 비빔밥은?",
+            "불고기 비빔밥",
+            "돌솥비빔밥",
+            "산채비빔밥",
+            "해물비빔밥",
+            3
+        )
+    )
