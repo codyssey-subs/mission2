@@ -51,16 +51,39 @@ class QuizGame:
     #퀴즈 추가
     def quiz_add(self):
         print("\n📌 새로운 퀴즈를 추가합니다.\n")
-        question = input("문제: ")
-        choices = []
-        for i in range(4):
-            choices.append(input(f"선택지[{i + 1}]: "))
-        answer = check_num("정답: ", 4)
-        while answer == 0:
-            answer = check_num("정답: ", 4)
-        self.quizzes.append(Quiz(question, choices[0], choices[1], choices[2], choices[3], answer))
-        print("\n✅ 퀴즈가 추가되었습니다!\n")
-        # self.save_data()
+        while True:
+            try:
+                question = input("문제: ")
+                if question == "":
+                    continue
+
+                choices = []
+                for i in range(4):
+                    while True:
+                        try:
+                            choice = input(f"선택지[{i + 1}]: ").strip()
+                            if choice:
+                                choices.append(choice)
+                                break
+                        except KeyboardInterrupt:
+                            #Ctrl + C
+                            print("\n⚠️ 잘못된 입력입니다. \nCtrl + C로 종료되지 않습니다!")
+                        except EOFError:
+                            #Ctrl + D
+                            print("\n⚠️ 잘못된 입력입니다. \nCtrl + D로 안전 종료합니다!")
+                            return
+                
+                answer = check_num("정답: ", 4)
+                self.quizzes.append(Quiz(question, choices[0], choices[1], choices[2], choices[3], answer))
+                print("\n✅ 퀴즈가 추가되었습니다!\n")
+                break
+            except KeyboardInterrupt:
+                #Ctrl + C
+                print("\n⚠️ 잘못된 입력입니다. \nCtrl + C로 종료되지 않습니다!")
+            except EOFError:
+                #Ctrl + D
+                print("\n⚠️ 잘못된 입력입니다. \nCtrl + D로 안전 종료합니다!")
+                break
     #
     #목록 보기
     def quiz_list(self):
