@@ -28,7 +28,6 @@ def start_quiz(quizGame):
 def main():
     quizGame = QuizGame()
     start_quiz(quizGame)
-    print(f"sdfsjfdlsjklsjdl: {quizGame.best_score}")
     quizGame.save_data()
 
 if __name__ == "__main__":
