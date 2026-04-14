@@ -60,7 +60,7 @@ class QuizGame:
             answer = check_num("정답: ", 4)
         self.quizzes.append(Quiz(question, choices[0], choices[1], choices[2], choices[3], answer))
         print("\n✅ 퀴즈가 추가되었습니다!\n")
-        self.save_data()
+        # self.save_data()
     #
     #목록 보기
     def quiz_list(self):
