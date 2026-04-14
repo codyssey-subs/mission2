@@ -5,13 +5,13 @@ from classes.class_quiz import Quiz
 
 def handle_file_exception(e):
     if isinstance(e, FileNotFoundError):
-        print("파일이 없어 새로 시작합니다.")
+        print("⚠️ 파일이 없어 새로 시작합니다!")
     elif isinstance(e, json.JSONDecodeError):
-        print("파일 형식이 잘못되었습니다.")
+        print("⚠️ 파일 형식이 잘못되었습니다!")
     elif isinstance(e, PermissionError):
-        print("파일 권한이 없습니다.")
+        print("⚠️ 파일 권한이 없습니다!")
     else:
-        print(f"파일 오류: {e}")
+        print(f"⚠️ 파일 오류: {e}")
 
 def check_num(msg, range_num):
     try:

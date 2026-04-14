@@ -6,6 +6,7 @@ from classes.class_quizgame import QuizGame
 
 
 def start_quiz(quizGame):
+    quizGame.load_data()
     while True:
         quizGame.print_menu()
         menu_num = check_num("선택: ", 5)
@@ -27,6 +28,8 @@ def start_quiz(quizGame):
 def main():
     quizGame = QuizGame()
     start_quiz(quizGame)
+    print(f"sdfsjfdlsjklsjdl: {quizGame.best_score}")
+    quizGame.save_data()
 
 if __name__ == "__main__":
     main()
