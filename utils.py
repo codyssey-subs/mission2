@@ -37,7 +37,8 @@ def check_num(msg, range_num):
     except EOFError:
         #Ctrl + D
         print()
-        print("⚠️ 잘못된 입력입니다. Ctrl + D로 종료되지 않습니다!")
+        print("⚠️ 잘못된 입력입니다. Ctrl + D로 안전 종료합니다!")
+        return 5
     else:
         #허용 범위 밖 숫자
         if 0 >= num or num > range_num:
